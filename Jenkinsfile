@@ -25,7 +25,7 @@ pipeline {
         
       }
     }
-    stage('AceptanceTest') {
+    stage('IntegrationTest') {
       steps {
         sh 'mvn verify -DskipUTs'
         junit 'target/failsafe-reports/*.xml'

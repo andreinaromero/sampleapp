@@ -20,9 +20,15 @@ pipeline {
         sh 'mvn clean test'
         junit 'target/surefire-reports/*.xml'
         catchError() {
-          junit 'target/surefire/*.xml'
+          junit 'target/surefire-reports/*.xml'
         }
         
+      }
+    }
+    stage('AceptanceTest') {
+      steps {
+        sh 'mvn verify -DskipUTs'
+        junit 'target/failsafe-reports/*.xml'
       }
     }
   }

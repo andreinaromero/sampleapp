@@ -1,7 +1,7 @@
 pipeline {
   agent any
   stages {
-    stage('Hola') {
+    stage('Codigo Fuente') {
       steps {
         parallel(
           "Hola": {

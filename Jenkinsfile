@@ -9,7 +9,7 @@ pipeline {
             
           },
           "GitPull": {
-            git 'https://github.com/adrianmoya/sampleapp.git'
+            git 'https://github.com/andreinaromero/sampleapp.git'
             
           }
         )

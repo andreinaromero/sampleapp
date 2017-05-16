@@ -19,6 +19,10 @@ pipeline {
       steps {
         sh 'mvn clean test'
         junit 'target/surefire-reports/*.xml'
+        catchError() {
+          junit 'target/surefire/*.xml'
+        }
+        
       }
     }
   }

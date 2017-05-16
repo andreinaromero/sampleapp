@@ -31,5 +31,10 @@ pipeline {
         junit 'target/failsafe-reports/*.xml'
       }
     }
+    stage('Análisis Estático') {
+      steps {
+        sh 'mvn -DeskipTests checkstyle:checkstyle pmd:pmd findbugs:findbugs'
+      }
+    }
   }
 }
